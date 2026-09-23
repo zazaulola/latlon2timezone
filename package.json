@@ -1,0 +1,52 @@
+{
+  "name": "latlon2timezone",
+  "version": "0.1.0",
+  "description": "Offline lat/lon -> IANA time zone lookup (quadtree-compressed timezone-boundary-builder polygons)",
+  "keywords": [
+    "timezone",
+    "time zone",
+    "tz",
+    "iana",
+    "geolocation",
+    "latitude",
+    "longitude",
+    "offline",
+    "quadtree",
+    "point-in-polygon"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zazaulola/latlon2timezone.git"
+  },
+  "homepage": "https://github.com/zazaulola/latlon2timezone#readme",
+  "bugs": {
+    "url": "https://github.com/zazaulola/latlon2timezone/issues"
+  },
+  "type": "module",
+  "main": "./src/index.mjs",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./lookup": "./src/lookup.mjs",
+    "./tiled": "./src/tiled.mjs"
+  },
+  "files": [
+    "src",
+    "data/tz.bin.gz",
+    "README.md",
+    "DATA-LICENSE.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "download": "node scripts/download.mjs",
+    "build": "node --max-old-space-size=8192 scripts/build.mjs",
+    "partition": "node --max-old-space-size=8192 scripts/partition.mjs",
+    "test": "node --test test/unit.test.mjs",
+    "test:reference": "node --max-old-space-size=8192 test/reference.mjs",
+    "test:partition": "node --max-old-space-size=8192 test/partition.test.mjs",
+    "bench": "node bench/bench.mjs",
+    "bench:compare": "node bench/compare.mjs"
+  }
+}

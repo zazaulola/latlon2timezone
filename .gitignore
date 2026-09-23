@@ -1,0 +1,11 @@
+node_modules/
+.DS_Store
+
+# raw sources (npm run download) and everything derived except the shipped index
+data/raw/
+data/*.bin
+data/*.bin.gz
+!data/tz.bin.gz
+data/parts/
+data/*.log
+data/reference-points.json
